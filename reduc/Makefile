@@ -1,7 +1,7 @@
 CFLAGS=-g -Wall
 
-OFLAGS=-O0
-CC=clang
+OFLAGS=-O1
+CC=gcc
 INTEL_LFLAGS=-qmkl
 GNU_LFLAGS=-lm -lcblas
 
