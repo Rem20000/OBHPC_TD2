@@ -1,7 +1,7 @@
 CFLAGS=-g -Wall
 
 OFLAGS=-O3
-
+CC = gcc
 INTEL_LFLAGS=-qmkl
 GNU_LFLAGS=-lm -lcblas
 
@@ -21,12 +21,12 @@ ifeq ($(CC),gcc)
 else
 ifeq ($(CC),clang)
 	$(CC) $(CFLAGS) $(OFLAGS) $(FILES) -o $@ $(GNU_LFLAGS)
+
 else
 	@echo "ERROR: no compiler specified using CC. Possible values for CC: gcc, icc, icx, clang"
 endif
 endif
 endif
 endif
-
 clean:
 	@rm -Rf dotprod
